@@ -10,6 +10,7 @@ exports.createParking=async (req,res)=>{
         console.log(cate);
         const slots = new Parking({cat:cate, date: date+' '+time})
         await slots.save();
+        res.status(201).json({ message: "successful"});
     } catch (error) {
         console.error(error);
     }

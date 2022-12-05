@@ -1,7 +1,11 @@
 const mongoose = require("mongoose");
 const parkingSchema = new mongoose.Schema({
-    parking:{
-        type:[Number],
+    cat:{
+        type:String,
+        required: true
+    },
+    date:{
+        type:String,
         required: true
     }
 })

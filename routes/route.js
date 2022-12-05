@@ -4,6 +4,6 @@ const { updateParking } = require("../controllers/updateParking");
 const { createParking } = require("../controllers/createParking");
 const { getparking } = require("../controllers/getparking");
 router.post("/", updateParking);
-router.get("/create", createParking);
+router.post("/create", createParking);
 router.get("/", getparking);
 module.exports = router;

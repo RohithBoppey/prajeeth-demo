@@ -1,8 +1,14 @@
 const Parking = require("../models/parkingSchema");
 
-exports.createParking=async ()=>{
+exports.createParking=async (req,res)=>{
+    const { cate } = req.body;
     try {
-        const slots = new Parking({parking:[0,0,0,0,0,0]})
+        date = new Date().toLocaleDateString();
+        time = new Date().toLocaleTimeString();
+        datestr = date+' '+time;
+        console.log(datestr);
+        console.log(cate);
+        const slots = new Parking({cat:cate, date: date+' '+time})
         await slots.save();
     } catch (error) {
         console.error(error);
